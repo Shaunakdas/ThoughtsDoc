@@ -1,5 +1,14 @@
 <h2>USeCase#1: Question Source</h2>
-* Check SoundManager, duplicate Audio Source and assign new audioSource gameobject to audio source in soundmanager field.
+
+* Check SoundManager, duplicate SecondaryAudioSource as VoiceAudioSource.
+
+* SoundManager.cs changes
+```
+#L13
+public AudioSource _voiceAudioSource;
+```        
+
+* Assign VoiceAudioSource gameobject to **Voice audio source** in SoundManager script of SoundManager gameobject.
 
 * SoundManager.cs
 
@@ -9,7 +18,7 @@
 
     public void StartQuestionAudio(string _urlPath)
     {
-        StartCoroutine(SongCoroutine(questionAudioSource, _urlPath));
+        StartCoroutine(SongCoroutine(_voiceAudioSource, _urlPath));
     }
     public void StopQuestionAudio()
     {
