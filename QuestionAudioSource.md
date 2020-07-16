@@ -83,4 +83,9 @@ void _NextComment()
     {
     SoundManager.Instance.StopVoiceAudio();
     }
+    
+public void _Close()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
 ```
