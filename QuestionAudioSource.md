@@ -126,3 +126,12 @@ void _SkipMethod()
     {
     SoundManager.Instance.StopVoiceAudio();
     }
+```
+
+* ConversionGameController.cs
+
+```
+IEnumerator NewSectionAnimation(float waittime)
+        {
+        
+```
