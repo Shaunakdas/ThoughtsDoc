@@ -16,13 +16,13 @@ public AudioSource _voiceAudioSource;
 
 ```
 
-    public void StartQuestionAudio(string _urlPath)
+    public void StartVoiceAudio(string _urlPath)
     {
         StartCoroutine(SongCoroutine(_voiceAudioSource, _urlPath));
     }
-    public void StopQuestionAudio()
+    public void StopVoiceAudio()
     {
-        questionAudioSource.Stop();
+        _voiceAudioSource.Stop();
     }
     IEnumerator SongCoroutine(AudioSource _source, string _urlPath)
     {
@@ -52,4 +52,35 @@ public AudioSource _voiceAudioSource;
     }
 ```
 
-ConversionGamecontroller.cs
+<h2>USeCase#2: Dialog System</h2>
+
+* DialogSystem.cs
+
+```
+#L43
+private string m_current_audio_url;
+
+#L548
+m_current_audio_url = m_dialogues.character_dialogs[m_commentno].audio_url;
+
+IEnumerator _Tallk()
+    {
+....
+    SoundManager.Instance.StartVoiceAudio(m_current_audio_url);
+
+}
+
+void _SkipComment(){
+    SoundManager.Instance.StopVoiceAudio();
+}
+
+void _GoHome()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+}
+
+void _NextComment()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
+```
