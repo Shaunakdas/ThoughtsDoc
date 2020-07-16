@@ -89,3 +89,40 @@ public void _Close()
     SoundManager.Instance.StopVoiceAudio();
     }
 ```
+* Hintcontroller.cs
+
+```
+#L46
+private string m_current_audio_url;
+
+#L182
+m_current_audio_url = m_hintstructure.pages[m_curruntpage].audios[m_curruntline]
+
+void _BlueDotMethod()
+    {
+...
+    m_current_audio_url = m_hintstructure.pages[m_curruntpage].audios[m_curruntline]
+    }
+IEnumerator _TypeWriterEffect()
+    {
+    ...
+    SoundManager.Instance.StartVoiceAudio(m_current_audio_url);
+    
+    }
+
+void _NextButton()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
+void _PriviousButton()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
+void _FinishMethod()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
+void _SkipMethod()
+    {
+    SoundManager.Instance.StopVoiceAudio();
+    }
